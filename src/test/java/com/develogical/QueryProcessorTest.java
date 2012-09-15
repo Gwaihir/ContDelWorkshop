@@ -1,10 +1,8 @@
 package com.develogical;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.StringContains.containsString;
-import junit.framework.TestSuite;
 
 import org.junit.Test;
 
@@ -42,4 +40,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 988, 22"), is("988"));
 	}
     
+    @Test
+	public void whichIsLargestAmongMany() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 100, 26, 988, 22"), is("988"));
+	}
+   
 }

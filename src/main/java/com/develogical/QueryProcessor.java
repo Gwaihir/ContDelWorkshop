@@ -32,8 +32,11 @@ public class QueryProcessor {
 		while (m.find()) {
 		   numbers.add(Integer.parseInt(m.group()));
 		}
-		if (numbers.get(0) > numbers.get(1)) return Integer.toString(numbers.get(0));
-		else return  Integer.toString(numbers.get(1));
+		Integer response = 0;
+		for (Integer number: numbers) {
+			if (number > response) response = number;
+		}
+		return Integer.toString(response);
 	}
 
 	private String addUp(String query) {
