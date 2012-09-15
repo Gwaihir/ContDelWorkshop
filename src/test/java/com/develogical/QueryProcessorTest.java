@@ -50,5 +50,11 @@ public class QueryProcessorTest {
 	public void multiply() throws Exception {
         assertThat(queryProcessor.process("what is 9 multiplied by 0"), is("0"));
 	}
-   
+
+    @Test
+	public void squareAndCube() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 1, 244"),
+        		is("1"));
+	}
+    
 }

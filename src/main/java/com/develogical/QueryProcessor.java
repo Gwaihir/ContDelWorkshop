@@ -8,23 +8,39 @@ import java.util.regex.Pattern;
 public class QueryProcessor {
 
     public String process(String query) {
-    	System.out.println(query);    	
+    	System.out.println(query);   
+    	String answer = "";
     	
         if (query.contains("SPA2012")) {
-            return "SPA is a conference";
+        	answer = "SPA is a conference";
         } else if (query.contains("Eendje")) {
-        	return "Fantastische workshops!";
+        	answer = "Fantastische workshops!";
         } else if (query.contains("Lunch")) {
-        	return "Didn't you have enough?";
+        	answer = "Didn't you have enough?";
         } else if (query.contains("plus")) {
-        	return addUp(query);
+        	answer = addUp(query);
         } else if (query.contains("largest")) {
-        	return findLargest(query);
+        	answer = findLargest(query);
         } else if (query.contains("multiplied")) {
-        	return multiply(query);
+        	answer = multiply(query);
+        } else if (query.contains("cube")) {
+        	answer = findSquaresAndCubes(query);
         }
-        return "";
+        return answer;
     }
+
+	private String findSquaresAndCubes(String query) {
+		List<Integer> numbers = findNumbers(query);
+		for (Integer number: numbers) {
+			try {
+				double sqrt = Math.sqrt(number);
+				double cbrt = Math.cbrt(number);
+				if (sqrt%1 == 0 && cbrt%1 == 0)
+				return Integer.toString(number);
+			} catch (Exception e) {}
+		}
+		return "";
+	}
 
 	private String multiply(String query) {
 		List<Integer> numbers = findNumbers(query);
