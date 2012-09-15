@@ -20,11 +20,31 @@ public class QueryProcessor {
         	return addUp(query);
         } else if (query.contains("largest")) {
         	return findLargest(query);
+        } else if (query.contains("multiplied")) {
+        	return multiply(query);
         }
         return "";
     }
 
+	private String multiply(String query) {
+		List<Integer> numbers = findNumbers(query);
+		Integer response = 1;
+		for (Integer number: numbers) {
+			response = response * number;
+		}
+		return Integer.toString(response);
+	}
+
 	private String findLargest(String query) {
+		List<Integer> numbers = findNumbers(query);
+		Integer response = 0;
+		for (Integer number: numbers) {
+			if (number > response) response = number;
+		}
+		return Integer.toString(response);
+	}
+
+	private List<Integer> findNumbers(String query) {
 		List<Integer> numbers = new ArrayList<Integer>();
 
 		Pattern p = Pattern.compile("\\d+");
@@ -32,11 +52,7 @@ public class QueryProcessor {
 		while (m.find()) {
 		   numbers.add(Integer.parseInt(m.group()));
 		}
-		Integer response = 0;
-		for (Integer number: numbers) {
-			if (number > response) response = number;
-		}
-		return Integer.toString(response);
+		return numbers;
 	}
 
 	private String addUp(String query) {
