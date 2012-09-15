@@ -11,6 +11,8 @@ public class QueryProcessor {
     	System.out.println("Query: " + query);   
     	String answer = "";
     	
+    	query = clean(query);
+    	
         if (query.contains("SPA2012")) {
         	answer = "SPA is a conference";
         } else if (query.contains("Eendje")) {
@@ -31,6 +33,10 @@ public class QueryProcessor {
         System.out.println("Answer: " + answer);        
         return answer;
     }
+
+	private String clean(String query) {
+		return query.substring(query.indexOf(":"));
+	}
 
 	private String findFibonacciNumber(String query) {
 		Integer number = findNumbers(query).get(0);
