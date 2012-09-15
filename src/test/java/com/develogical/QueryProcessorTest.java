@@ -24,10 +24,5 @@ public class QueryProcessorTest {
 	public void knowsAboutCDWorkshop() throws Exception {
         assertThat(queryProcessor.process("Eendje"), containsString("Fantastische workshops!"));
 	}
-
-    @Test
-	public void oops() throws Exception {
-        assertThat(queryProcessor.process("Twweetje"), containsString("Fantastische workshops!"));
-	}
     
 }
