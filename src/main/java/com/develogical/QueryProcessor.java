@@ -7,6 +7,8 @@ public class QueryProcessor {
             return "SPA is a conference";
         } else if (query.contains("Eendje")) {
         	return "Fantastische workshops!";
+        } else if (query.contains("Lunch")) {
+        	return "Absolutely, any minute now!";
         }
         return "Sorry, no clue";
     }
