@@ -36,6 +36,11 @@ public class QueryProcessorTest {
 	}
 
     @Test
+	public void substract() throws Exception {
+        assertThat(queryProcessor.process("31fb0: what is 17 minus 7"), is("10"));
+	}
+
+    @Test
 	public void whichIsLargest() throws Exception {
         assertThat(queryProcessor.process("31fb0: which of the following numbers is the largest: 988, 22"), is("988"));
 	}

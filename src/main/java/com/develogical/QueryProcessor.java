@@ -21,6 +21,8 @@ public class QueryProcessor {
         	answer = "Didn't you have enough?";
         } else if (query.contains("plus")) {
         	answer = addUp(query);
+        } else if (query.contains("minus")) {
+        	answer = substract(query);
         } else if (query.contains("largest")) {
         	answer = findLargest(query);
         } else if (query.contains("multiplied")) {
@@ -33,6 +35,12 @@ public class QueryProcessor {
         System.out.println("Answer: " + answer);        
         return answer;
     }
+
+	private String substract(String query) {
+		List<Integer> numbers = findNumbers(query);
+		int total = numbers.get(0);
+		return Integer.toString(total - numbers.get(1));
+	}
 
 	private String clean(String query) {
 		return query.substring(query.indexOf(":"));
