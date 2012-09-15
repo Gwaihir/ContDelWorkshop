@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class QueryProcessor {
 
     public String process(String query) {
-    	System.out.println(query);   
+    	System.out.println("Query: " + query);   
     	String answer = "";
     	
         if (query.contains("SPA2012")) {
@@ -26,7 +26,7 @@ public class QueryProcessor {
         } else if (query.contains("cube")) {
         	answer = findSquaresAndCubes(query);
         }
-        System.out.println(answer);        
+        System.out.println("Answer: " + answer);        
         return answer;
     }
 

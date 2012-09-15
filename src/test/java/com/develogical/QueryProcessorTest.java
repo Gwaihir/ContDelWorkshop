@@ -1,7 +1,6 @@
 package com.develogical;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.StringContains.containsString;
 
@@ -55,6 +54,16 @@ public class QueryProcessorTest {
 	public void squareAndCube() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 1, 244"),
         		is("1"));
+	}
+    @Test
+	public void squareAndCube2() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 316, 144"),
+        		is(""));
+	}
+    @Test
+	public void squareAndCube3() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 632, 100"),
+        		is(""));
 	}
     
 }
