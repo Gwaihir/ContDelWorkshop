@@ -26,6 +26,7 @@ public class QueryProcessor {
         } else if (query.contains("cube")) {
         	answer = findSquaresAndCubes(query);
         }
+        System.out.println(answer);        
         return answer;
     }
 
