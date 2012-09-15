@@ -8,7 +8,7 @@ public class QueryProcessor {
         } else if (query.contains("Eendje")) {
         	return "Fantastische workshops!";
         } else if (query.contains("Lunch")) {
-        	return "Absolutely, any minute now!";
+        	return "Didn't you have enough?";
         }
         return "Sorry, no clue";
     }
