@@ -25,10 +25,27 @@ public class QueryProcessor {
         	answer = multiply(query);
         } else if (query.contains("cube")) {
         	answer = findSquaresAndCubes(query);
+        } else if (query.contains("Fibonacci")) {
+        	answer = findFibonacciNumber(query);
         }
         System.out.println("Answer: " + answer);        
         return answer;
     }
+
+	private String findFibonacciNumber(String query) {
+		Integer number = findNumbers(query).get(0);
+		if (number == 1 || number == 2) return "1";
+
+		int twoago = 1;
+		int temp = 1;
+		int last = 1;
+		for (int i = 3; i <= number; i++) {
+			temp = last;
+			last = last + twoago;
+			twoago = temp;
+		}
+		return Integer.toString(last);
+	}
 
 	private String findSquaresAndCubes(String query) {
 		List<Integer> numbers = findNumbers(query);

@@ -1,6 +1,7 @@
 package com.develogical;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.StringContains.containsString;
 
@@ -66,4 +67,9 @@ public class QueryProcessorTest {
         		is(""));
 	}
     
+    @Test
+	public void fibonacci() throws Exception {
+        assertThat(queryProcessor.process("what is the 5th number in the Fibonacci sequence"),
+        		is("5"));
+	}
 }
