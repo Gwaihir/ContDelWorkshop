@@ -13,9 +13,16 @@ public class QueryProcessor {
         	return "Didn't you have enough?";
         } else if (query.contains("plus")) {
         	return addUp(query);
+//        } else if (query.contains("largest")) {
+//        	return findLargest(query);
         }
-        return "Sorry, no clue";
+        return "";
     }
+
+//	private String findLargest(String query) {
+//		query.matches(regex)
+//		return null;
+//	}
 
 	private String addUp(String query) {
 		String[] pieces = query.split(" ");
