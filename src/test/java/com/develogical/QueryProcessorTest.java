@@ -26,11 +26,6 @@ public class QueryProcessorTest {
 	}
 
     @Test
-	public void knowsAboutMyDesires() throws Exception {
-        assertThat(queryProcessor.process("31fb0: Lunch!"), containsString("Didn't you have enough?"));
-	}
-    
-    @Test
 	public void addNumbers() throws Exception {
         assertThat(queryProcessor.process("31fb0: what is 17 plus 7"), is("24"));
 	}

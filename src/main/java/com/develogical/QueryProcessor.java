@@ -17,8 +17,6 @@ public class QueryProcessor {
         	answer = "SPA is a conference";
         } else if (query.contains("Eendje")) {
         	answer = "Fantastische workshops!";
-        } else if (query.contains("Lunch")) {
-        	answer = "Didn't you have enough?";
         } else if (query.contains("plus")) {
         	answer = addUp(query);
         } else if (query.contains("minus")) {
